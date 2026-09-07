@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>UPYA | Uwezo Pamoja Youths Association</title>
+
+<style>
+    /* =========================
+       BASIC RESET
+    ========================= */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #ffffff;
+        color: #111827;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+
+    /* =========================
+       TOP HEADER
+    ========================= */
+
+    .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 82px;
+
+        display: flex;
+        align-items: center;
+
+        padding: 0 6%;
+
+        z-index: 1000;
+
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+        transition: 0.4s ease;
+    }
+
+
+    /* =========================
+       HEADER WHEN SCROLLED
+    ========================= */
+
+    .site-header.scrolled {
+        background: rgba(255, 255, 255, 0.97);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    }
+
+
+    /* =========================
+       FLOATING LOGO
+    ========================= */
+
+    .logo-wrapper {
+        position: relative;
+        z-index: 1100;
+
+        display: flex;
+        align-items: center;
+    }
+
+    .logo {
+        width: 92px;
+        height: 92px;
+
+        border-radius: 50%;
+
+        background: #1E40AF;
+
+        border: 5px solid #FFD700;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: white;
+
+        font-size: 27px;
+        font-weight: 900;
+
+        letter-spacing: 1px;
+
+        box-shadow:
+            0 10px 30px rgba(0, 0, 0, 0.25);
+
+        transform: translateY(15px);
+
+        transition: 0.4s ease;
+    }
+
+    .logo:hover {
+        transform: translateY(15px) scale(1.06);
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .main-nav {
+        margin-left: auto;
+
+        display: flex;
+        align-items: center;
+
+        gap: 30px;
+    }
+
+    .main-nav > a {
+        position: relative;
+
+        font-size: 14px;
+        font-weight: 700;
+
+        color: white;
+
+        padding: 30px 0;
+
+        transition: 0.3s ease;
+    }
+
+    .main-nav > a::after {
+        content: "";
+
+        position: absolute;
+
+        left: 0;
+        bottom: 20px;
+
+        width: 0;
+        height: 3px;
+
+        background: #FFD700;
+
+        transition: 0.3s ease;
+    }
+
+    .main-nav > a:hover::after {
+        width: 100%;
+    }
+
+
+    /* =========================
+       NAVIGATION AFTER SCROLL
+    ========================= */
+
+    .site-header.scrolled .main-nav > a {
+        color: #1E40AF;
+    }
+
+
+    /* =========================
+       JOIN BUTTON
+    ========================= */
+
+    .join-btn {
+        background: #FFD700 !important;
+        color: #111827 !important;
+
+        padding: 13px 22px !important;
+
+        border-radius: 30px;
+
+        font-weight: 800 !important;
+
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+
+        transition: 0.3s ease;
+    }
+
+    .join-btn:hover {
+        transform: translateY(-3px);
+
+        box-shadow:
+            0 12px 25px rgba(0, 0, 0, 0.18);
+    }
+
+    .join-btn::after {
+        display: none;
+    }
+
+
+    /* =========================
+       TEMPORARY CONTENT
+       Just so we can see the
+       header while testing.
+    ========================= */
+
+    .test-area {
+        height: 150vh;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+
+        background:
+            linear-gradient(
+                135deg,
+                #1E40AF,
+                #2563EB,
+                #0F766E
+            );
+
+        color: white;
+
+        padding: 30px;
+    }
+
+    .test-area h1 {
+        font-size: clamp(35px, 6vw, 75px);
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 1000px) {
+
+        .main-nav {
+            gap: 15px;
+        }
+
+        .main-nav > a {
+            font-size: 12px;
+        }
+
+        .logo {
+            width: 78px;
+            height: 78px;
+
+            font-size: 22px;
+        }
+    }
+
+
+    @media (max-width: 750px) {
+
+        .site-header {
+            height: 70px;
+
+            padding: 0 20px;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+
+            border-width: 4px;
+
+            transform: translateY(10px);
+
+            font-size: 20px;
+        }
+
+        .main-nav {
+            display: none;
+        }
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- =========================
+     HEADER
+========================== -->
+
+<header class="site-header" id="siteHeader">
+
+    <div class="logo-wrapper">
+
+        <!-- Temporary UPYA logo.
+             We will replace "UPYA"
+             with your actual logo later. -->
+
+        <a href="index.html" class="logo">
+            UPYA
+        </a>
+
+    </div>
+
+
+    <nav class="main-nav">
+
+        <a href="index.html">HOME</a>
+
+        <a href="#">ABOUT</a>
+
+        <a href="#">PROGRAMS</a>
+
+        <a href="#">PROJECTS</a>
+
+        <a href="#">IMPACT</a>
+
+        <a href="#">EVENTS</a>
+
+        <a href="#">GALLERY</a>
+
+        <a href="#">NEWS</a>
+
+        <a href="#">CONTACT</a>
+
+        <a href="#" class="join-btn">
+            GET INVOLVED
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     TEMPORARY TEST AREA
+========================== -->
+
+<section class="test-area">
+
+    <div>
+
+        <p style="margin-bottom:15px; letter-spacing:3px;">
+            UWEZO PAMOJA YOUTHS ASSOCIATION
+        </p>
+
+        <h1>
+            UPYA
+        </h1>
+
+        <p style="margin-top:20px;">
+            Our new website starts here.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================== -->
+
+<script>
+
+    const header = document.getElementById("siteHeader");
+
+    window.addEventListener("scroll", function () {
+
+        if (window.scrollY > 50) {
+
+            header.classList.add("scrolled");
+
+        } else {
+
+            header.classList.remove("scrolled");
+
+        }
+
+    });
+
+</script>
+```
+
+</body>
+</html>
