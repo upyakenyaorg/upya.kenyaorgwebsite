@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 ```
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>UPYA | Uwezo Pamoja Youths Association</title>
 
+<meta name="description"
+    content="Uwezo Pamoja Youths Association — empowering, equipping, mentoring and nurturing tomorrow's world.">
+
+
 <style>
-    /* =========================
-       BASIC RESET
-    ========================= */
+
+    /* =========================================
+       RESET
+    ========================================= */
 
     * {
         margin: 0;
@@ -19,15 +27,18 @@
         box-sizing: border-box;
     }
 
+
     html {
         scroll-behavior: smooth;
     }
 
+
     body {
         font-family: Arial, Helvetica, sans-serif;
-        background: #ffffff;
         color: #111827;
+        background: #ffffff;
     }
+
 
     a {
         text-decoration: none;
@@ -35,14 +46,18 @@
     }
 
 
-    /* =========================
-       TOP HEADER
-    ========================= */
+
+    /* =========================================
+       HEADER
+    ========================================= */
 
     .site-header {
+
         position: fixed;
+
         top: 0;
         left: 0;
+
         width: 100%;
         height: 82px;
 
@@ -54,37 +69,47 @@
         z-index: 1000;
 
         background: rgba(255, 255, 255, 0.08);
+
         backdrop-filter: blur(10px);
 
         border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 
-        transition: 0.4s ease;
+        transition: all 0.4s ease;
     }
 
 
-    /* =========================
-       HEADER WHEN SCROLLED
-    ========================= */
+
+    /* =========================================
+       HEADER AFTER SCROLL
+    ========================================= */
 
     .site-header.scrolled {
+
         background: rgba(255, 255, 255, 0.97);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+
+        box-shadow:
+            0 8px 30px rgba(0, 0, 0, 0.10);
     }
 
 
-    /* =========================
+
+    /* =========================================
        FLOATING LOGO
-    ========================= */
+    ========================================= */
 
     .logo-wrapper {
+
         position: relative;
+
         z-index: 1100;
 
         display: flex;
         align-items: center;
     }
 
+
     .logo {
+
         width: 92px;
         height: 92px;
 
@@ -95,12 +120,14 @@
         border: 5px solid #FFD700;
 
         display: flex;
+
         align-items: center;
         justify-content: center;
 
         color: white;
 
-        font-size: 27px;
+        font-size: 22px;
+
         font-weight: 900;
 
         letter-spacing: 1px;
@@ -113,46 +140,60 @@
         transition: 0.4s ease;
     }
 
+
     .logo:hover {
-        transform: translateY(15px) scale(1.06);
+
+        transform:
+            translateY(15px)
+            scale(1.06);
     }
 
 
-    /* =========================
+
+    /* =========================================
        NAVIGATION
-    ========================= */
+    ========================================= */
 
     .main-nav {
+
         margin-left: auto;
 
         display: flex;
+
         align-items: center;
 
-        gap: 30px;
+        gap: 28px;
     }
 
+
     .main-nav > a {
+
         position: relative;
 
-        font-size: 14px;
+        padding: 30px 0;
+
+        font-size: 13px;
+
         font-weight: 700;
 
         color: white;
 
-        padding: 30px 0;
-
         transition: 0.3s ease;
     }
 
+
     .main-nav > a::after {
+
         content: "";
 
         position: absolute;
 
         left: 0;
+
         bottom: 20px;
 
         width: 0;
+
         height: 3px;
 
         background: #FFD700;
@@ -160,129 +201,659 @@
         transition: 0.3s ease;
     }
 
+
     .main-nav > a:hover::after {
+
         width: 100%;
     }
 
 
-    /* =========================
-       NAVIGATION AFTER SCROLL
-    ========================= */
-
     .site-header.scrolled .main-nav > a {
+
         color: #1E40AF;
     }
 
 
-    /* =========================
-       JOIN BUTTON
-    ========================= */
+
+    /* =========================================
+       GET INVOLVED BUTTON
+    ========================================= */
 
     .join-btn {
+
         background: #FFD700 !important;
+
         color: #111827 !important;
 
-        padding: 13px 22px !important;
+        padding: 13px 21px !important;
 
         border-radius: 30px;
 
         font-weight: 800 !important;
 
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        box-shadow:
+            0 8px 20px rgba(0, 0, 0, 0.12);
 
         transition: 0.3s ease;
     }
 
+
     .join-btn:hover {
+
         transform: translateY(-3px);
 
         box-shadow:
             0 12px 25px rgba(0, 0, 0, 0.18);
     }
 
+
     .join-btn::after {
-        display: none;
+
+        display: none !important;
     }
 
 
-    /* =========================
-       TEMPORARY CONTENT
-       Just so we can see the
-       header while testing.
-    ========================= */
 
-    .test-area {
-        height: 150vh;
+    /* =========================================
+       HERO
+    ========================================= */
+
+    .hero {
+
+        position: relative;
+
+        height: 100vh;
+
+        min-height: 650px;
+
+        overflow: hidden;
 
         display: flex;
-        align-items: center;
-        justify-content: center;
 
-        text-align: center;
+        align-items: center;
+
+        color: white;
+    }
+
+
+
+    /* =========================================
+       HERO BACKGROUND SLIDES
+    ========================================= */
+
+    .hero-slide {
+
+        position: absolute;
+
+        inset: 0;
+
+        background-size: cover;
+
+        background-position: center;
+
+        opacity: 0;
+
+        animation:
+            heroSlide 20s infinite;
+    }
+
+
+    .hero-slide:nth-child(1) {
+
+        background-image:
+            url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=2200&q=85");
+
+        animation-delay: 0s;
+    }
+
+
+    .hero-slide:nth-child(2) {
+
+        background-image:
+            url("https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=2200&q=85");
+
+        animation-delay: 5s;
+    }
+
+
+    .hero-slide:nth-child(3) {
+
+        background-image:
+            url("https://images.unsplash.com/photo-1509099836639-18ba02c7f0b5?auto=format&fit=crop&w=2200&q=85");
+
+        animation-delay: 10s;
+    }
+
+
+    .hero-slide:nth-child(4) {
+
+        background-image:
+            url("https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=2200&q=85");
+
+        animation-delay: 15s;
+    }
+
+
+
+    /* =========================================
+       IMAGE ANIMATION
+    ========================================= */
+
+    @keyframes heroSlide {
+
+        0% {
+
+            opacity: 0;
+
+            transform: scale(1);
+        }
+
+
+        5% {
+
+            opacity: 1;
+        }
+
+
+        25% {
+
+            opacity: 1;
+        }
+
+
+        30% {
+
+            opacity: 0;
+
+            transform: scale(1.08);
+        }
+
+
+        100% {
+
+            opacity: 0;
+
+            transform: scale(1.08);
+        }
+    }
+
+
+
+    /* =========================================
+       HERO OVERLAY
+    ========================================= */
+
+    .hero-overlay {
+
+        position: absolute;
+
+        inset: 0;
 
         background:
             linear-gradient(
-                135deg,
-                #1E40AF,
-                #2563EB,
-                #0F766E
+                90deg,
+                rgba(3, 12, 35, 0.92),
+                rgba(3, 12, 35, 0.65),
+                rgba(3, 12, 35, 0.25)
             );
+
+        z-index: 2;
+    }
+
+
+
+    /* =========================================
+       HERO CONTENT
+    ========================================= */
+
+    .hero-content {
+
+        position: relative;
+
+        z-index: 5;
+
+        width: min(1150px, 90%);
+
+        margin: 50px auto 0;
+
+        animation:
+            heroContent 1.2s ease forwards;
+    }
+
+
+    @keyframes heroContent {
+
+        from {
+
+            opacity: 0;
+
+            transform:
+                translateY(40px);
+        }
+
+
+        to {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+    }
+
+
+
+    /* =========================================
+       HERO BADGE
+    ========================================= */
+
+    .hero-badge {
+
+        display: inline-block;
+
+        padding: 9px 17px;
+
+        margin-bottom: 25px;
+
+        border-left:
+            4px solid #FFD700;
+
+        background:
+            rgba(255, 255, 255, 0.12);
+
+        backdrop-filter:
+            blur(8px);
+
+        font-size: 12px;
+
+        font-weight: 800;
+
+        letter-spacing: 2px;
+
+        text-transform: uppercase;
+    }
+
+
+
+    /* =========================================
+       HERO TITLE
+    ========================================= */
+
+    .hero-content h1 {
+
+        max-width: 950px;
+
+        font-size:
+            clamp(48px, 7vw, 88px);
+
+        line-height: 0.98;
+
+        font-weight: 900;
+
+        letter-spacing: -3px;
+
+        margin-bottom: 28px;
+    }
+
+
+    .hero-content h1 span {
+
+        color: #FFD700;
+    }
+
+
+
+    /* =========================================
+       HERO DESCRIPTION
+    ========================================= */
+
+    .hero-content p {
+
+        max-width: 650px;
+
+        font-size:
+            clamp(17px, 2vw, 21px);
+
+        line-height: 1.7;
+
+        color:
+            rgba(255,255,255,0.90);
+
+        margin-bottom: 38px;
+    }
+
+
+
+    /* =========================================
+       HERO BUTTONS
+    ========================================= */
+
+    .hero-buttons {
+
+        display: flex;
+
+        gap: 15px;
+
+        flex-wrap: wrap;
+    }
+
+
+    .hero-btn {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 15px;
+
+        padding: 16px 25px;
+
+        border-radius: 4px;
+
+        font-size: 14px;
+
+        font-weight: 800;
+
+        transition:
+            all 0.3s ease;
+    }
+
+
+    .hero-btn-primary {
+
+        background: #FFD700;
+
+        color: #111827;
+    }
+
+
+    .hero-btn-primary:hover {
+
+        transform:
+            translateY(-4px);
+
+        box-shadow:
+            0 15px 30px rgba(0,0,0,0.25);
+    }
+
+
+    .hero-btn-outline {
+
+        border:
+            1px solid rgba(255,255,255,0.75);
 
         color: white;
 
-        padding: 30px;
+        background:
+            rgba(255,255,255,0.05);
+
+        backdrop-filter:
+            blur(5px);
     }
 
-    .test-area h1 {
-        font-size: clamp(35px, 6vw, 75px);
+
+    .hero-btn-outline:hover {
+
+        background: white;
+
+        color: #1E40AF;
+
+        transform:
+            translateY(-4px);
     }
 
 
-    /* =========================
+    .hero-btn span {
+
+        font-size: 20px;
+
+        line-height: 0;
+    }
+
+
+
+    /* =========================================
+       SCROLL INDICATOR
+    ========================================= */
+
+    .hero-scroll {
+
+        position: absolute;
+
+        z-index: 5;
+
+        bottom: 30px;
+
+        left: 50%;
+
+        transform:
+            translateX(-50%);
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 9px;
+
+        color: white;
+
+        font-size: 10px;
+
+        letter-spacing: 3px;
+
+        opacity: 0.8;
+    }
+
+
+    .scroll-line {
+
+        width: 1px;
+
+        height: 45px;
+
+        background: white;
+
+        position: relative;
+
+        overflow: hidden;
+    }
+
+
+    .scroll-line::after {
+
+        content: "";
+
+        position: absolute;
+
+        top: -45px;
+
+        left: 0;
+
+        width: 100%;
+
+        height: 45px;
+
+        background: #FFD700;
+
+        animation:
+            scrollLine 2s infinite;
+    }
+
+
+    @keyframes scrollLine {
+
+        0% {
+            top: -45px;
+        }
+
+        50% {
+            top: 0;
+        }
+
+        100% {
+            top: 45px;
+        }
+    }
+
+
+
+    /* =========================================
+       HERO DOTS
+    ========================================= */
+
+    .hero-dots {
+
+        position: absolute;
+
+        z-index: 5;
+
+        right: 40px;
+
+        top: 50%;
+
+        transform:
+            translateY(-50%);
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+
+    .hero-dot {
+
+        width: 9px;
+
+        height: 9px;
+
+        border-radius: 50%;
+
+        border:
+            1px solid white;
+
+        opacity: 0.7;
+    }
+
+
+    .hero-dot.active {
+
+        background: #FFD700;
+
+        border-color: #FFD700;
+
+        transform: scale(1.3);
+    }
+
+
+
+    /* =========================================
        MOBILE
-    ========================= */
+    ========================================= */
 
-    @media (max-width: 1000px) {
+    @media (max-width: 1050px) {
 
         .main-nav {
+
             gap: 15px;
         }
 
         .main-nav > a {
-            font-size: 12px;
+
+            font-size: 11px;
         }
 
-        .logo {
-            width: 78px;
-            height: 78px;
-
-            font-size: 22px;
-        }
     }
 
 
     @media (max-width: 750px) {
 
         .site-header {
+
             height: 70px;
 
-            padding: 0 20px;
+            padding:
+                0 20px;
         }
 
+
+        .main-nav {
+
+            display: none;
+        }
+
+
         .logo {
-            width: 70px;
-            height: 70px;
+
+            width: 72px;
+
+            height: 72px;
+
+            font-size: 19px;
 
             border-width: 4px;
 
-            transform: translateY(10px);
-
-            font-size: 20px;
+            transform:
+                translateY(10px);
         }
 
-        .main-nav {
-            display: none;
+
+        .hero {
+
+            min-height: 700px;
         }
+
+
+        .hero-content {
+
+            width: 86%;
+
+            margin-top: 40px;
+        }
+
+
+        .hero-content h1 {
+
+            font-size:
+                clamp(42px, 12vw, 65px);
+
+            letter-spacing: -2px;
+        }
+
+
+        .hero-content p {
+
+            font-size: 16px;
+        }
+
+
+        .hero-buttons {
+
+            flex-direction: column;
+
+            align-items: flex-start;
+        }
+
+
+        .hero-dots {
+
+            right: 18px;
+        }
+
+
+        .hero-overlay {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(3,12,35,0.92),
+                    rgba(3,12,35,0.70)
+                );
+        }
+
     }
 
 </style>
@@ -293,17 +864,16 @@
 <body>
 
 ```
-<!-- =========================
+<!-- =========================================
      HEADER
-========================== -->
+========================================= -->
 
 <header class="site-header" id="siteHeader">
 
-    <div class="logo-wrapper">
 
-        <!-- Temporary UPYA logo.
-             We will replace "UPYA"
-             with your actual logo later. -->
+    <!-- Floating logo -->
+
+    <div class="logo-wrapper">
 
         <a href="index.html" class="logo">
             UPYA
@@ -312,25 +882,45 @@
     </div>
 
 
+    <!-- Navigation -->
+
     <nav class="main-nav">
 
-        <a href="index.html">HOME</a>
+        <a href="index.html">
+            HOME
+        </a>
 
-        <a href="#">ABOUT</a>
+        <a href="#">
+            ABOUT
+        </a>
 
-        <a href="#">PROGRAMS</a>
+        <a href="#">
+            PROGRAMS
+        </a>
 
-        <a href="#">PROJECTS</a>
+        <a href="#">
+            PROJECTS
+        </a>
 
-        <a href="#">IMPACT</a>
+        <a href="#">
+            IMPACT
+        </a>
 
-        <a href="#">EVENTS</a>
+        <a href="#">
+            EVENTS
+        </a>
 
-        <a href="#">GALLERY</a>
+        <a href="#">
+            GALLERY
+        </a>
 
-        <a href="#">NEWS</a>
+        <a href="#">
+            NEWS
+        </a>
 
-        <a href="#">CONTACT</a>
+        <a href="#">
+            CONTACT
+        </a>
 
         <a href="#" class="join-btn">
             GET INVOLVED
@@ -342,39 +932,126 @@
 
 
 
-<!-- =========================
-     TEMPORARY TEST AREA
-========================== -->
+<!-- =========================================
+     HERO
+========================================= -->
 
-<section class="test-area">
+<main>
 
-    <div>
-
-        <p style="margin-bottom:15px; letter-spacing:3px;">
-            UWEZO PAMOJA YOUTHS ASSOCIATION
-        </p>
-
-        <h1>
-            UPYA
-        </h1>
-
-        <p style="margin-top:20px;">
-            Our new website starts here.
-        </p>
-
-    </div>
-
-</section>
+    <section class="hero">
 
 
+        <!-- Animated backgrounds -->
 
-<!-- =========================
-     JAVASCRIPT
-========================== -->
+        <div class="hero-slide"></div>
+
+        <div class="hero-slide"></div>
+
+        <div class="hero-slide"></div>
+
+        <div class="hero-slide"></div>
+
+
+        <!-- Dark overlay -->
+
+        <div class="hero-overlay"></div>
+
+
+        <!-- Main content -->
+
+        <div class="hero-content">
+
+
+            <div class="hero-badge">
+                Uwezo Pamoja Youths Association
+            </div>
+
+
+            <h1>
+
+                Empowering Youth.<br>
+
+                <span>
+                    Transforming Communities.
+                </span>
+
+            </h1>
+
+
+            <p>
+                To empower, equip, mentor and nurture tomorrow's world.
+            </p>
+
+
+            <div class="hero-buttons">
+
+
+                <a href="#" class="hero-btn hero-btn-primary">
+
+                    Explore Our Work
+
+                    <span>→</span>
+
+                </a>
+
+
+                <a href="#" class="hero-btn hero-btn-outline">
+
+                    Get Involved
+
+                    <span>→</span>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- Scroll indicator -->
+
+        <div class="hero-scroll">
+
+            <div class="scroll-line"></div>
+
+            <span>
+                SCROLL TO EXPLORE
+            </span>
+
+        </div>
+
+
+        <!-- Slide indicators -->
+
+        <div class="hero-dots">
+
+            <div class="hero-dot active"></div>
+
+            <div class="hero-dot"></div>
+
+            <div class="hero-dot"></div>
+
+            <div class="hero-dot"></div>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================================
+     HEADER SCROLL SCRIPT
+========================================= -->
 
 <script>
 
-    const header = document.getElementById("siteHeader");
+    const header =
+        document.getElementById("siteHeader");
+
 
     window.addEventListener("scroll", function () {
 
@@ -394,4 +1071,5 @@
 ```
 
 </body>
+
 </html>
