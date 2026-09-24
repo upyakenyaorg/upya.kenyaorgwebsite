@@ -1,144 +1,101 @@
-```javascript
-/* =========================================================
-   ELIMUPLUS MAIN JAVASCRIPT
-   ========================================================= */
+document.addEventListener("DOMContentLoaded", function () {
 
-document.addEventListener("DOMContentLoaded", () => {
-
-    /* =====================================================
+    /* =========================================
        MOBILE MENU
-    ===================================================== */
+       ========================================= */
 
-    const mobileMenuBtn =
+    const menuButton =
         document.getElementById("mobileMenuBtn");
 
     const mobileNav =
         document.getElementById("mobileNav");
 
 
-    if (mobileMenuBtn && mobileNav) {
+    if (menuButton && mobileNav) {
 
-        mobileMenuBtn.addEventListener("click", () => {
+        menuButton.addEventListener("click", function () {
 
-            const isOpen =
-                mobileNav.classList.toggle("active");
-
-            mobileMenuBtn.setAttribute(
-                "aria-expanded",
-                isOpen
-            );
-
+            mobileNav.classList.toggle("active");
 
             const icon =
-                mobileMenuBtn.querySelector("i");
+                menuButton.querySelector("i");
 
 
-            if (icon) {
+            if (
+                mobileNav.classList.contains("active")
+            ) {
 
-                icon.classList.toggle(
-                    "fa-bars",
-                    !isOpen
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "true"
                 );
 
-                icon.classList.toggle(
-                    "fa-xmark",
-                    isOpen
+                icon.classList.remove(
+                    "fa-bars"
+                );
+
+                icon.classList.add(
+                    "fa-xmark"
+                );
+
+            } else {
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                icon.classList.remove(
+                    "fa-xmark"
+                );
+
+                icon.classList.add(
+                    "fa-bars"
                 );
 
             }
 
         });
 
-
-        /* Close menu after clicking a link */
-
-        const mobileLinks =
-            mobileNav.querySelectorAll("a");
-
-
-        mobileLinks.forEach(link => {
-
-            link.addEventListener("click", () => {
-
-                mobileNav.classList.remove("active");
-
-                mobileMenuBtn.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-
-                const icon =
-                    mobileMenuBtn.querySelector("i");
-
-
-                if (icon) {
-
-                    icon.classList.remove(
-                        "fa-xmark"
-                    );
-
-                    icon.classList.add(
-                        "fa-bars"
-                    );
-
-                }
-
-            });
-
-        });
-
     }
 
 
+    /* =========================================
+       SEARCH
+       ========================================= */
 
-    /* =====================================================
-       AI SEARCH
-    ===================================================== */
-
-    const aiSearchForm =
+    const searchForm =
         document.getElementById("aiSearchForm");
 
-    const aiSearchInput =
+    const searchInput =
         document.getElementById("aiSearchInput");
 
 
-    if (aiSearchForm && aiSearchInput) {
+    if (searchForm && searchInput) {
 
-        aiSearchForm.addEventListener(
+        searchForm.addEventListener(
             "submit",
-            (event) => {
+            function (event) {
 
                 event.preventDefault();
 
-
                 const question =
-                    aiSearchInput.value.trim();
+                    searchInput.value.trim();
 
 
-                if (!question) {
+                if (question === "") {
 
-                    aiSearchInput.focus();
+                    searchInput.focus();
 
                     return;
 
                 }
 
 
-                /*
-                 * AI BACKEND WILL BE CONNECTED LATER.
-                 *
-                 * For now, take the student to
-                 * the ElimuPlus AI page with the
-                 * question in the URL.
-                 */
-
-                const encodedQuestion =
-                    encodeURIComponent(question);
-
-
-                window.location.href =
-                    `pages/ai.html?q=${encodedQuestion}`;
+                alert(
+                    "ElimuPlus AI will answer: " +
+                    question
+                );
 
             }
         );
@@ -146,50 +103,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-
-    /* =====================================================
+    /* =========================================
        SEARCH SUGGESTIONS
-    ===================================================== */
+       ========================================= */
 
-    const suggestions =
+    const suggestionButtons =
         document.querySelectorAll(
             ".search-suggestions button"
         );
 
 
-    suggestions.forEach(button => {
+    suggestionButtons.forEach(
+        function (button) {
 
-        button.addEventListener("click", () => {
+            button.addEventListener(
+                "click",
+                function () {
 
-            if (!aiSearchInput) return;
+                    searchInput.value =
+                        button.textContent.trim();
+
+                    searchInput.focus();
+
+                }
+            );
+
+        }
+    );
 
 
-            aiSearchInput.value =
-                button.textContent.trim();
-
-
-            aiSearchInput.focus();
-
-        });
-
-    });
-
-
-
-    /* =====================================================
+    /* =========================================
        CURRENT YEAR
-    ===================================================== */
+       ========================================= */
 
-    const currentYear =
+    const year =
         document.getElementById("currentYear");
 
 
-    if (currentYear) {
+    if (year) {
 
-        currentYear.textContent =
+        year.textContent =
             new Date().getFullYear();
 
     }
 
 });
-```
