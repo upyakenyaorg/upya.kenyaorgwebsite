@@ -6,32 +6,36 @@
     <meta charset="UTF-8">
 
     <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+          content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="ElimuPlus - Learn, Practice and Grow through education, skills, mentorship and AI-powered learning.">
+          content="ElimuPlus is an AI-powered learning platform for CBC, CDACC, TVET, university students and lifelong learners. Learn, practice and grow.">
 
     <meta name="keywords"
-        content="ElimuPlus, CBC, CDACC, TVET, university, online learning, Kenya, courses, examinations">
+          content="ElimuPlus, CBC, CDACC, TVET, university, online learning, Kenya, courses, exams, AI tutor">
 
-    <meta name="author"
-        content="ElimuPlus">
+    <meta name="author" content="ElimuPlus">
 
     <title>ElimuPlus | Learn. Practice. Grow.</title>
 
-    <!-- Main stylesheet -->
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Font Awesome -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
 
 
 <body>
-
 
 <!-- =====================================================
      HEADER
@@ -41,25 +45,21 @@
 
     <div class="container nav-container">
 
-        <!-- Logo -->
+        <!-- LOGO -->
 
         <a href="index.html" class="logo">
 
-            <img
-                src="assets/logo/elimu-plus-logo.png"
-                alt="ElimuPlus Logo"
-            >
+            <img src="assets/logo/elimu-plus-logo.png"
+                 alt="ElimuPlus Logo">
 
         </a>
 
 
-        <!-- Navigation -->
+        <!-- DESKTOP NAVIGATION -->
 
-        <nav class="main-nav">
+        <nav class="main-nav" id="mainNav">
 
-            <a href="index.html">
-                Home
-            </a>
+            <a href="index.html">Home</a>
 
             <a href="pages/education.html">
                 Education
@@ -73,40 +73,44 @@
                 Practice
             </a>
 
-            <a href="pages/teachers.html">
-                Teachers
-            </a>
-
             <a href="pages/books.html">
                 Books
             </a>
 
-            <a href="pages/about.html">
-                About
+            <a href="pages/teachers.html">
+                Teachers
             </a>
 
         </nav>
 
 
-        <!-- Navigation Actions -->
+        <!-- NAVIGATION ACTIONS -->
 
         <div class="nav-actions">
 
-            <a
-                href="pages/login.html"
-                class="login-link"
-            >
+            <a href="pages/login.html"
+               class="login-link">
                 Login
             </a>
 
-            <a
-                href="pages/register.html"
-                class="btn btn-primary"
-            >
+            <a href="pages/register.html"
+               class="btn btn-primary">
                 Join ElimuPlus
             </a>
 
         </div>
+
+
+        <!-- MOBILE MENU BUTTON -->
+
+        <button class="mobile-menu-btn"
+                id="mobileMenuBtn"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
 
     </div>
 
@@ -115,20 +119,72 @@
 
 
 <!-- =====================================================
+     MOBILE NAVIGATION
+===================================================== -->
+
+<div class="mobile-nav" id="mobileNav">
+
+    <a href="index.html">
+        <i class="fa-solid fa-house"></i>
+        Home
+    </a>
+
+    <a href="pages/education.html">
+        <i class="fa-solid fa-graduation-cap"></i>
+        Education
+    </a>
+
+    <a href="pages/courses.html">
+        <i class="fa-solid fa-book-open"></i>
+        Courses
+    </a>
+
+    <a href="pages/practice.html">
+        <i class="fa-solid fa-pen"></i>
+        Practice
+    </a>
+
+    <a href="pages/books.html">
+        <i class="fa-solid fa-book"></i>
+        Books
+    </a>
+
+    <a href="pages/teachers.html">
+        <i class="fa-solid fa-chalkboard-user"></i>
+        Teachers
+    </a>
+
+    <a href="pages/login.html">
+        <i class="fa-solid fa-right-to-bracket"></i>
+        Login
+    </a>
+
+    <a href="pages/register.html"
+       class="mobile-register">
+        Join ElimuPlus
+    </a>
+
+</div>
+
+
+
+<!-- =====================================================
      HERO SECTION
 ===================================================== -->
+
+<main>
 
 <section class="hero">
 
     <div class="container hero-content">
 
 
-        <!-- Hero Text -->
+        <!-- HERO TEXT -->
 
         <div class="hero-text">
 
             <span class="hero-label">
-                THE FUTURE OF LEARNING
+                AI-POWERED LEARNING PLATFORM
             </span>
 
 
@@ -140,28 +196,30 @@
 
 
             <p>
-                ElimuPlus brings education, practical skills,
-                teachers, mentorship, examinations and
-                AI-powered learning together in one platform.
+                A modern learning platform connecting students
+                with quality education, teachers, practical skills,
+                examinations, mentorship and AI-powered learning
+                assistance.
             </p>
 
 
             <div class="hero-buttons">
 
-                <a
-                    href="pages/education.html"
-                    class="btn btn-primary"
-                >
+                <a href="pages/education.html"
+                   class="btn btn-primary">
+
                     Explore Learning
+
                     <i class="fa-solid fa-arrow-right"></i>
+
                 </a>
 
 
-                <a
-                    href="pages/register.html"
-                    class="btn btn-secondary"
-                >
-                    Get Started
+                <a href="pages/register.html"
+                   class="btn btn-secondary">
+
+                    Join ElimuPlus
+
                 </a>
 
             </div>
@@ -170,39 +228,47 @@
 
 
 
-        <!-- AI Search -->
+        <!-- AI SEARCH -->
 
         <div class="hero-search">
 
+            <div class="ai-search-icon">
+
+                <i class="fa-solid fa-sparkles"></i>
+
+            </div>
+
+
             <h3>
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
-                Ask ElimuPlus AI
+                What do you want to learn?
             </h3>
 
 
-            <p>
-                Search for something you want to learn,
-                understand or practice.
+            <p class="search-description">
+
+                Ask ElimuPlus AI a question,
+                find a course or discover learning resources.
+
             </p>
 
 
-            <div class="search-box">
+            <form class="search-box"
+                  id="aiSearchForm">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
 
                 <input
                     type="text"
-                    placeholder="What do you want to learn?"
                     id="aiSearchInput"
+                    placeholder="Ask ElimuPlus AI anything..."
+                    autocomplete="off"
                 >
 
-
-                <button
-                    type="button"
-                    id="aiSearchButton"
-                >
-                    Ask AI
+                <button type="submit">
+                    Ask
                 </button>
 
-            </div>
+            </form>
 
 
             <div class="search-suggestions">
@@ -214,11 +280,11 @@
                 </button>
 
                 <button type="button">
-                    Communication skills
+                    Help me revise
                 </button>
 
                 <button type="button">
-                    Help me revise
+                    Communication skills
                 </button>
 
             </div>
@@ -239,7 +305,6 @@
 
     <div class="container">
 
-
         <div class="section-heading">
 
             <span>
@@ -251,12 +316,12 @@
             </h2>
 
             <p>
-                Access structured learning resources
-                according to your education level and goals.
+                Explore structured learning resources
+                designed for different education levels
+                and learning goals.
             </p>
 
         </div>
-
 
 
         <div class="category-grid">
@@ -264,13 +329,13 @@
 
             <!-- CBC -->
 
-            <a
-                href="pages/education/cbc.html"
-                class="category-card"
-            >
+            <a href="pages/education.html?level=cbc"
+               class="category-card">
 
                 <div class="category-icon">
+
                     <i class="fa-solid fa-school"></i>
+
                 </div>
 
                 <h3>
@@ -278,8 +343,8 @@
                 </h3>
 
                 <p>
-                    Competency-Based Curriculum resources,
-                    lessons, revision and practice.
+                    Competency-based learning resources,
+                    subjects, practice and revision.
                 </p>
 
                 <span>
@@ -293,13 +358,13 @@
 
             <!-- CDACC / TVET -->
 
-            <a
-                href="pages/education/cdacc.html"
-                class="category-card"
-            >
+            <a href="pages/education.html?level=tv​​et"
+               class="category-card">
 
                 <div class="category-icon">
+
                     <i class="fa-solid fa-screwdriver-wrench"></i>
+
                 </div>
 
                 <h3>
@@ -307,8 +372,8 @@
                 </h3>
 
                 <p>
-                    Competency-based training, technical
-                    courses, practical skills and assessment.
+                    Technical and vocational learning,
+                    practical skills and assessments.
                 </p>
 
                 <span>
@@ -322,13 +387,13 @@
 
             <!-- UNIVERSITY -->
 
-            <a
-                href="pages/education/university.html"
-                class="category-card"
-            >
+            <a href="pages/education.html?level=university"
+               class="category-card">
 
                 <div class="category-icon">
-                    <i class="fa-solid fa-graduation-cap"></i>
+
+                    <i class="fa-solid fa-building-columns"></i>
+
                 </div>
 
                 <h3>
@@ -336,7 +401,7 @@
                 </h3>
 
                 <p>
-                    University courses, subjects, notes,
+                    University courses, subjects,
                     revision materials and examinations.
                 </p>
 
@@ -351,22 +416,22 @@
 
             <!-- PROFESSIONAL -->
 
-            <a
-                href="pages/education/professional.html"
-                class="category-card"
-            >
+            <a href="pages/education.html?level=professional"
+               class="category-card">
 
                 <div class="category-icon">
+
                     <i class="fa-solid fa-briefcase"></i>
+
                 </div>
 
                 <h3>
-                    Professional & Skills
+                    Professional
                 </h3>
 
                 <p>
-                    Build practical skills for employment,
-                    business and personal development.
+                    Professional development and
+                    career-focused learning.
                 </p>
 
                 <span>
@@ -392,23 +457,22 @@
 
     <div class="container">
 
-
         <div class="section-heading">
 
             <span>
-                SKILLS DEVELOPMENT
+                SHORT COURSES
             </span>
 
             <h2>
-                Short Courses
+                Skills Beyond the Classroom
             </h2>
 
             <p>
-                Learn useful skills beyond the classroom.
+                Develop practical skills that can help
+                you communicate, work and grow.
             </p>
 
         </div>
-
 
 
         <div class="course-grid">
@@ -425,13 +489,12 @@
                 </h3>
 
                 <p>
-                    Improve your communication in school,
-                    work and everyday life.
+                    Improve your communication,
+                    listening and interpersonal skills.
                 </p>
 
-                <a href="pages/courses/communication.html">
-                    View Course
-                    <i class="fa-solid fa-arrow-right"></i>
+                <a href="pages/courses.html">
+                    View Course →
                 </a>
 
             </article>
@@ -449,37 +512,12 @@
                 </h3>
 
                 <p>
-                    Build confidence and communicate
-                    effectively before an audience.
+                    Build confidence and learn how
+                    to communicate effectively.
                 </p>
 
-                <a href="pages/courses/public-speaking.html">
-                    View Course
-                    <i class="fa-solid fa-arrow-right"></i>
-                </a>
-
-            </article>
-
-
-
-            <article class="course-card">
-
-                <span class="course-tag">
-                    FREE
-                </span>
-
-                <h3>
-                    Digital Skills
-                </h3>
-
-                <p>
-                    Develop essential computer and
-                    digital skills for modern life.
-                </p>
-
-                <a href="pages/courses/digital-skills.html">
-                    View Course
-                    <i class="fa-solid fa-arrow-right"></i>
+                <a href="pages/courses.html">
+                    View Course →
                 </a>
 
             </article>
@@ -493,7 +531,7 @@
                 </span>
 
                 <h3>
-                    Leadership
+                    Leadership Skills
                 </h3>
 
                 <p>
@@ -501,9 +539,31 @@
                     decision-making skills.
                 </p>
 
-                <a href="pages/courses/leadership.html">
-                    View Course
-                    <i class="fa-solid fa-arrow-right"></i>
+                <a href="pages/courses.html">
+                    View Course →
+                </a>
+
+            </article>
+
+
+
+            <article class="course-card">
+
+                <span class="course-tag premium">
+                    PREMIUM
+                </span>
+
+                <h3>
+                    Digital Skills
+                </h3>
+
+                <p>
+                    Learn useful digital skills for
+                    education, work and business.
+                </p>
+
+                <a href="pages/courses.html">
+                    View Course →
                 </a>
 
             </article>
@@ -517,7 +577,7 @@
 
 
 <!-- =====================================================
-     LEARN + PRACTICE
+     LEARNING ECOSYSTEM
 ===================================================== -->
 
 <section class="section">
@@ -528,26 +588,25 @@
         <div class="feature-text">
 
             <span>
-                LEARN DIFFERENTLY
+                MORE THAN NOTES
             </span>
 
             <h2>
-                Learn. Practice. Test. Improve.
+                Learn, Practice, Test and Improve.
             </h2>
 
             <p>
-                ElimuPlus is designed around active learning.
-                Study a lesson, practice what you have learned,
-                take an examination and understand where you
-                need to improve.
+                ElimuPlus brings learning resources,
+                practice questions, examinations,
+                teachers and AI assistance into one
+                learning ecosystem.
             </p>
 
+            <a href="pages/education.html"
+               class="btn btn-primary">
 
-            <a
-                href="pages/practice.html"
-                class="btn btn-primary"
-            >
-                Start Practicing
+                Start Learning
+
             </a>
 
         </div>
@@ -561,35 +620,36 @@
             </h3>
 
             <p>
-                Everything you need to improve your learning.
+                Progress from understanding a concept
+                to demonstrating what you know.
             </p>
 
 
             <ul>
 
                 <li>
-                    <i class="fa-solid fa-book"></i>
-                    Structured lessons
+                    <i class="fa-solid fa-book-open"></i>
+                    Learn through lessons
                 </li>
 
                 <li>
-                    <i class="fa-solid fa-circle-question"></i>
-                    Practice questions
+                    <i class="fa-solid fa-pen"></i>
+                    Practice with questions
                 </li>
 
                 <li>
-                    <i class="fa-solid fa-stopwatch"></i>
-                    Mock examinations
+                    <i class="fa-solid fa-clock"></i>
+                    Take mock examinations
                 </li>
 
                 <li>
                     <i class="fa-solid fa-chart-line"></i>
-                    Performance analysis
+                    Track your progress
                 </li>
 
                 <li>
-                    <i class="fa-solid fa-robot"></i>
-                    AI-powered assistance
+                    <i class="fa-solid fa-sparkles"></i>
+                    Get AI-powered assistance
                 </li>
 
             </ul>
@@ -603,13 +663,12 @@
 
 
 <!-- =====================================================
-     PRACTICE & EXAMINATIONS
+     PRACTICE & EXAMS
 ===================================================== -->
 
 <section class="section section-light">
 
     <div class="container">
-
 
         <div class="section-heading">
 
@@ -618,16 +677,16 @@
             </span>
 
             <h2>
-                Test Your Knowledge
+                Don't Just Learn. Test Yourself.
             </h2>
 
             <p>
-                Practice at your own pace or simulate
-                an examination environment.
+                Practice questions and mock examinations
+                help you identify what you understand
+                and what needs more attention.
             </p>
 
         </div>
-
 
 
         <div class="practice-grid">
@@ -635,19 +694,23 @@
 
             <div class="practice-card">
 
-                <i class="fa-solid fa-pen-to-square"></i>
+                <div class="category-icon">
+
+                    <i class="fa-solid fa-list-check"></i>
+
+                </div>
 
                 <h3>
-                    Practice Questions
+                    Question Bank
                 </h3>
 
                 <p>
-                    Answer questions and receive immediate
-                    explanations and feedback.
+                    Practice questions organized by
+                    subject, topic and difficulty.
                 </p>
 
                 <a href="pages/practice.html">
-                    Start Practice
+                    Practice Questions →
                 </a>
 
             </div>
@@ -656,19 +719,23 @@
 
             <div class="practice-card">
 
-                <i class="fa-solid fa-clock"></i>
+                <div class="category-icon">
+
+                    <i class="fa-solid fa-file-circle-check"></i>
+
+                </div>
 
                 <h3>
-                    Mock Examinations
+                    Mock Exams
                 </h3>
 
                 <p>
-                    Test yourself under timed examination
-                    conditions.
+                    Simulate examinations with
+                    timed tests and automatic marking.
                 </p>
 
-                <a href="pages/exams.html">
-                    View Exams
+                <a href="pages/practice.html">
+                    Take a Mock Exam →
                 </a>
 
             </div>
@@ -677,19 +744,23 @@
 
             <div class="practice-card">
 
-                <i class="fa-solid fa-chart-simple"></i>
+                <div class="category-icon">
+
+                    <i class="fa-solid fa-chart-simple"></i>
+
+                </div>
 
                 <h3>
                     Track Progress
                 </h3>
 
                 <p>
-                    Understand your strengths and identify
-                    topics that need more practice.
+                    Understand your performance and
+                    identify topics that need more practice.
                 </p>
 
-                <a href="pages/progress.html">
-                    View Progress
+                <a href="pages/register.html">
+                    Start Tracking →
                 </a>
 
             </div>
@@ -714,25 +785,24 @@
         <div>
 
             <span>
-                LEARN FROM PEOPLE
+                LEARN WITH PEOPLE
             </span>
 
             <h2>
-                Connect With Teachers
+                Need Help From a Teacher?
             </h2>
 
             <p>
-                Discover teachers and learning professionals
-                who can help you understand difficult topics,
-                prepare for examinations and develop new skills.
+                Discover teachers and educators on ElimuPlus.
+                Students can search for teachers by subject,
+                education level and area of expertise.
             </p>
 
+            <a href="pages/teachers.html"
+               class="btn btn-primary">
 
-            <a
-                href="pages/teachers.html"
-                class="btn btn-primary"
-            >
                 Find a Teacher
+
             </a>
 
         </div>
@@ -742,25 +812,17 @@
         <div class="teacher-box">
 
             <h3>
-                Are You a Teacher?
+                For Teachers
             </h3>
 
             <p>
-                Join ElimuPlus as a teacher and share your
-                knowledge with learners.
+                Join ElimuPlus as a teacher, create
+                learning resources and help students
+                learn more effectively.
             </p>
-
-            <p>
-                Teacher accounts can be created without the
-                student membership fee. Access to premium
-                ElimuPlus materials remains subject to the
-                same content-access rules that apply to users.
-            </p>
-
 
             <a href="pages/teacher-register.html">
-                Join as a Teacher
-                <i class="fa-solid fa-arrow-right"></i>
+                Become an ElimuPlus Teacher →
             </a>
 
         </div>
@@ -779,7 +841,6 @@
 
     <div class="container">
 
-
         <div class="section-heading">
 
             <span>
@@ -787,16 +848,16 @@
             </span>
 
             <h2>
-                Books, Motivation & Self-Help
+                Books That Help You Grow
             </h2>
 
             <p>
-                Develop yourself beyond academic education
-                through books and personal-development resources.
+                Discover carefully selected learning,
+                self-development, motivation and
+                personal-growth resources.
             </p>
 
         </div>
-
 
 
         <div class="course-grid">
@@ -805,43 +866,20 @@
             <article class="course-card">
 
                 <span class="course-tag">
-                    FREE
+                    BOOKS
                 </span>
 
                 <h3>
-                    Personal Growth
+                    Self-Help
                 </h3>
 
                 <p>
-                    Resources designed to help you develop
-                    useful habits and a growth mindset.
+                    Resources focused on personal
+                    growth and positive habits.
                 </p>
 
                 <a href="pages/books.html">
-                    Explore Books
-                </a>
-
-            </article>
-
-
-
-            <article class="course-card">
-
-                <span class="course-tag premium">
-                    PREMIUM
-                </span>
-
-                <h3>
-                    Self-Help Books
-                </h3>
-
-                <p>
-                    Access selected premium personal-development
-                    books and learning resources.
-                </p>
-
-                <a href="pages/books.html">
-                    Browse Books
+                    Explore Books →
                 </a>
 
             </article>
@@ -851,7 +889,7 @@
             <article class="course-card">
 
                 <span class="course-tag">
-                    FREE
+                    BOOKS
                 </span>
 
                 <h3>
@@ -859,12 +897,12 @@
                 </h3>
 
                 <p>
-                    Practical resources to support your
-                    personal and academic journey.
+                    Inspirational resources designed
+                    to encourage personal development.
                 </p>
 
                 <a href="pages/books.html">
-                    Explore
+                    Explore Books →
                 </a>
 
             </article>
@@ -878,16 +916,39 @@
                 </span>
 
                 <h3>
-                    Leadership Resources
+                    Leadership
                 </h3>
 
                 <p>
-                    Build leadership, teamwork and
-                    decision-making abilities.
+                    Resources for developing leadership,
+                    teamwork and responsibility.
                 </p>
 
                 <a href="pages/books.html">
-                    Explore
+                    Explore Books →
+                </a>
+
+            </article>
+
+
+
+            <article class="course-card">
+
+                <span class="course-tag premium">
+                    PREMIUM
+                </span>
+
+                <h3>
+                    Career Development
+                </h3>
+
+                <p>
+                    Learn skills that can support your
+                    academic and professional journey.
+                </p>
+
+                <a href="pages/books.html">
+                    Explore Books →
                 </a>
 
             </article>
@@ -904,82 +965,38 @@
      ELIMUPLUS AI
 ===================================================== -->
 
-<section class="section">
+<section class="section ai-section">
 
-    <div class="container feature-section">
+    <div class="container ai-section-content">
 
+        <div class="ai-icon-large">
 
-        <div class="feature-box">
-
-            <h3>
-                <i class="fa-solid fa-robot"></i>
-                ElimuPlus AI
-            </h3>
-
-            <p>
-                Your intelligent learning assistant.
-            </p>
-
-
-            <ul>
-
-                <li>
-                    Ask questions
-                </li>
-
-                <li>
-                    Get concepts explained simply
-                </li>
-
-                <li>
-                    Generate practice questions
-                </li>
-
-                <li>
-                    Understand your mistakes
-                </li>
-
-                <li>
-                    Find relevant ElimuPlus resources
-                </li>
-
-                <li>
-                    Create personalised study plans
-                </li>
-
-            </ul>
+            <i class="fa-solid fa-sparkles"></i>
 
         </div>
 
+        <span>
+            ELIMUPLUS AI
+        </span>
 
+        <h2>
+            Your Learning Assistant.
+        </h2>
 
-        <div class="feature-text">
+        <p>
+            Ask questions, request explanations,
+            generate practice questions and discover
+            learning resources with AI-powered assistance.
+        </p>
 
-            <span>
-                AI-POWERED LEARNING
-            </span>
+        <a href="pages/ai.html"
+           class="btn btn-light">
 
-            <h2>
-                Don't Find What You Need?
-                Ask ElimuPlus AI.
-            </h2>
+            Ask ElimuPlus AI
 
-            <p>
-                ElimuPlus AI will help learners search
-                ElimuPlus resources and ask questions about
-                topics that may not yet have dedicated
-                content on the platform.
-            </p>
+            <i class="fa-solid fa-arrow-right"></i>
 
-
-            <a
-                href="pages/ai.html"
-                class="btn btn-primary"
-            >
-                Ask ElimuPlus AI
-            </a>
-
-        </div>
+        </a>
 
     </div>
 
@@ -995,20 +1012,18 @@
 
     <div class="container">
 
-
         <span>
-            JOIN ELIMUPLUS
+            ELIMUPLUS MEMBERSHIP
         </span>
 
-
         <h2>
-            Learn More. Grow More.
+            Learn More. Pay Less.
         </h2>
 
-
         <p>
-            Become part of a learning community built
-            around education, skills, practice and growth.
+            Access learning resources, practice,
+            examinations and more through one
+            affordable membership.
         </p>
 
 
@@ -1025,22 +1040,29 @@
         </div>
 
 
-        <p>
-            Student registration: KES 100
+        <p class="registration-fee">
+
+            One-time registration:
+            <strong>KES 100</strong>
+
         </p>
 
 
-        <a
-            href="pages/register.html"
-            class="btn btn-light"
-        >
+        <a href="pages/register.html"
+           class="btn btn-light">
+
             Join ElimuPlus
+
         </a>
 
 
         <p class="teacher-note">
-            Teachers can register for a teacher account
+
+            Teachers can register on the platform
             without paying the student membership fee.
+            Paid resources remain protected according
+            to access permissions.
+
         </p>
 
     </div>
@@ -1058,64 +1080,61 @@
     <div class="container footer-grid">
 
 
-        <!-- About -->
+        <!-- BRAND -->
 
         <div>
 
-            <a
-                href="index.html"
-                class="logo"
-            >
-                <img
-                    src="assets/logo/elimu-plus-logo.png"
-                    alt="ElimuPlus"
-                >
-            </a>
+            <a href="index.html"
+               class="logo">
 
+                <img src="assets/logo/elimu-plus-logo.png"
+                     alt="ElimuPlus Logo">
+
+            </a>
 
             <p>
                 Learn. Practice. Grow.
             </p>
 
-
             <p>
-                Education, practical skills, mentorship
-                and AI-powered learning in one ecosystem.
+                An AI-powered learning ecosystem
+                connecting learners, teachers,
+                resources and opportunities.
             </p>
 
         </div>
 
 
 
-        <!-- Education -->
+        <!-- LEARN -->
 
         <div>
 
             <h4>
-                Education
+                Learn
             </h4>
 
-            <a href="pages/education/cbc.html">
+            <a href="pages/education.html">
                 CBC
             </a>
 
-            <a href="pages/education/cdacc.html">
+            <a href="pages/education.html">
                 CDACC / TVET
             </a>
 
-            <a href="pages/education/university.html">
+            <a href="pages/education.html">
                 University
             </a>
 
-            <a href="pages/education/professional.html">
-                Professional Skills
+            <a href="pages/courses.html">
+                Short Courses
             </a>
 
         </div>
 
 
 
-        <!-- Platform -->
+        <!-- PLATFORM -->
 
         <div>
 
@@ -1123,16 +1142,12 @@
                 Platform
             </h4>
 
-            <a href="pages/courses.html">
-                Courses
-            </a>
-
             <a href="pages/practice.html">
                 Practice
             </a>
 
-            <a href="pages/exams.html">
-                Examinations
+            <a href="pages/books.html">
+                Books
             </a>
 
             <a href="pages/teachers.html">
@@ -1147,7 +1162,7 @@
 
 
 
-        <!-- Company -->
+        <!-- COMPANY -->
 
         <div>
 
@@ -1157,10 +1172,6 @@
 
             <a href="pages/about.html">
                 About Us
-            </a>
-
-            <a href="pages/books.html">
-                Books
             </a>
 
             <a href="pages/contact.html">
@@ -1180,14 +1191,13 @@
     </div>
 
 
-
     <div class="footer-bottom">
 
         <div class="container">
 
             <p>
-                © 2026 ElimuPlus.
-                All rights reserved.
+                © <span id="currentYear"></span>
+                ElimuPlus. All rights reserved.
             </p>
 
         </div>
@@ -1207,8 +1217,4 @@
 </body>
 
 </html>
-```
 
-This gives us the **complete homepage structure**. The links to pages that don't exist yet are intentional—we'll create those pages step by step rather than trying to build everything at once.
-
-**Next, we'll redo `style.css` to match this exact HTML**, including the mobile navigation, AI search styling, cards, animations, and the professional ElimuPlus visual identity.
