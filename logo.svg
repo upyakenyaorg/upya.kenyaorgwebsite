@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="ElimuPlus logo">
-<rect width="256" height="256" rx="64" fill="#178f68"/>
-<path d="M62 72c0-9 7-16 16-16h100c9 0 16 7 16 16v91c0 9-7 16-16 16H78c-9 0-16-7-16-16V72Z" fill="#fff" opacity=".96"/>
-<path d="M78 78h100v65H78z" fill="#e8f3df"/>
-<path d="M89 94h64M89 110h48M89 126h58" stroke="#123b35" stroke-width="10" stroke-linecap="round"/>
-<circle cx="180" cy="73" r="24" fill="#d8f36d"/>
-<path d="m169 73 8 8 15-18" fill="none" stroke="#123b35" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M112 166h42" stroke="#178f68" stroke-width="10" stroke-linecap="round"/>
-</svg>
