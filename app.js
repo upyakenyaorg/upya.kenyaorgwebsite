@@ -1,100 +1,244 @@
+/* =========================================================
+   ELIMUPLUS - SHARED WEBSITE SYSTEM
+   Header + Footer + Social Media + WhatsApp
+   ========================================================= */
+
+
+/* =========================================================
+   BASIC ACTIONS
+   ========================================================= */
+
 function join() {
     window.location.href = "register.html";
 }
+
 
 function choosePlan() {
     window.location.href = "pricing.html";
 }
 
+
 function searchSite(e) {
+
     e.preventDefault();
 
-    const query = e.target.querySelector("input").value.trim();
+    const input = e.target.querySelector("input");
+
+    if (!input) return;
+
+    const query = input.value.trim();
 
     if (!query) {
         alert("Enter a course, subject, teacher or book to search.");
         return;
     }
 
-    // Temporary search behaviour.
-    // Later this will search the Supabase database.
-    window.location.href =
-        `courses.html?search=${encodeURIComponent(query)}`;
+    /*
+        Temporary search behaviour.
+
+        Later this will connect to the ElimuPlus
+        database and search:
+
+        - Courses
+        - Subjects
+        - Lessons
+        - Teachers
+        - Books
+        - Questions
+        - Short courses
+    */
+
+    const searchURL =
+        `search.html?q=${encodeURIComponent(query)}`;
+
+    window.location.href = searchURL;
 }
 
 
-/* ==========================================
-   ELIMUPLUS SHARED HEADER + FOOTER
-   ========================================== */
+/* =========================================================
+   ELIMUPLUS CONFIGURATION
+   ========================================================= */
+
+const ELIMUPLUS_CONFIG = {
+
+    /*
+        IMPORTANT:
+        Replace this with the official ElimuPlus
+        WhatsApp number in international format.
+
+        Example:
+        2547XXXXXXXX
+
+        Do NOT include:
+        +
+        spaces
+        brackets
+        hyphens
+    */
+
+    whatsappNumber: "YOUR_WHATSAPP_NUMBER",
+
+    whatsappMessage:
+        "Hello ElimuPlus, I would like to know more about your learning platform.",
+
+    logo: "logo.svg",
+
+    brandName: "ElimuPlus",
+
+    tagline:
+        "Education, skills and personal development in one connected learning space."
+
+};
+
+
+/* =========================================================
+   LOAD FONT AWESOME
+   ========================================================= */
+
+(function loadFontAwesome() {
+
+    const existing =
+        document.querySelector(
+            'link[href*="font-awesome"]'
+        );
+
+    if (existing) return;
+
+    const link =
+        document.createElement("link");
+
+    link.rel = "stylesheet";
+
+    link.href =
+        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css";
+
+    link.crossOrigin = "anonymous";
+
+    document.head.appendChild(link);
+
+})();
+
+
+/* =========================================================
+   PAGE LIST
+   ========================================================= */
 
 (function () {
 
     const pages = [
+
         "index.html",
+
         "about.html",
+
         "courses.html",
+
         "practice.html",
+
         "teachers.html",
+
         "news.html",
+
         "contact.html",
+
         "pricing.html",
+
         "ai-assistant.html",
-        "books.html",
-        "short-courses.html",
-        "examinations.html",
-        "register.html",
-        "login.html",
+
         "student-dashboard.html",
-        "teacher-dashboard.html"
+
+        "register.html",
+
+        "login.html",
+
+        "books.html",
+
+        "short-courses.html",
+
+        "examinations.html",
+
+        "education.html",
+
+        "subjects.html"
+
     ];
 
+
     const current =
-        location.pathname.split("/").pop() || "index.html";
+        location.pathname.split("/").pop()
+        || "index.html";
+
+
+    /*
+        If this isn't one of the ElimuPlus pages,
+        stop here.
+    */
 
     if (!pages.includes(current)) return;
 
 
-    /* ==========================================
-       HEADER
-       ========================================== */
+    /* =====================================================
+       SHARED NAVIGATION
+       ===================================================== */
 
-    const nav = document.querySelector("nav.nav");
-
-    const logo = `
-        <img
-            src="logo.svg"
-            alt="ElimuPlus"
-            class="site-logo"
-        >
-    `;
-
-
-    const items = [
-        ["about.html", "About"],
-        ["courses.html", "Courses"],
-        ["practice.html", "Practice"],
-        ["teachers.html", "Teachers"],
-        ["ai-assistant.html", "ElimuPlus AI"],
-        ["news.html", "News"],
-        ["contact.html", "Contact"]
-    ];
-
-
-    const links = items.map(([url, label]) => {
-
-        return `
-            <a
-                href="${url}"
-                class="${current === url ? "active" : ""}"
-            >
-                ${label}
-            </a>
-        `;
-
-    }).join("");
+    const nav =
+        document.querySelector("nav.nav");
 
 
     if (nav) {
+
+        const logo = `
+
+            <img
+                src="${ELIMUPLUS_CONFIG.logo}"
+                alt="ElimuPlus"
+                class="shared-logo"
+            >
+
+        `;
+
+
+        const items = [
+
+            ["about.html", "About"],
+
+            ["courses.html", "Courses"],
+
+            ["practice.html", "Practice"],
+
+            ["teachers.html", "Teachers"],
+
+            ["ai-assistant.html", "ElimuPlus AI"],
+
+            ["news.html", "News"],
+
+            ["contact.html", "Contact"]
+
+        ];
+
+
+        const links = items
+            .map(([url, label]) => {
+
+                const isActive =
+                    current === url
+                    ? "active"
+                    : "";
+
+                return `
+
+                    <a
+                        href="${url}"
+                        class="${isActive}"
+                    >
+                        ${label}
+                    </a>
+
+                `;
+
+            })
+            .join("");
+
 
         nav.innerHTML = `
 
@@ -105,79 +249,62 @@ function searchSite(e) {
                     href="index.html"
                     aria-label="ElimuPlus Home"
                 >
+
                     ${logo}
+
                 </a>
 
 
                 <button
-                    class="mobile-menu"
-                    id="mobileMenu"
-                    aria-label="Open navigation"
+                    class="mobile-menu-toggle"
+                    type="button"
+                    aria-label="Open navigation menu"
                     aria-expanded="false"
                 >
+
                     <i class="fa-solid fa-bars"></i>
+
                 </button>
 
 
-                <div class="links" id="mainLinks">
+                <div class="links">
 
                     ${links}
 
+
                     <a
                         href="student-dashboard.html"
-                        class="${current === "student-dashboard.html" ? "active" : ""}"
+                        class="signin-link"
                     >
+
+                        <i class="fa-regular fa-user"></i>
+
                         Sign in
+
                     </a>
 
-                    <button
+
+                    <a
+                        href="register.html"
                         class="btn primary"
-                        onclick="join()"
                     >
+
                         Get started
-                    </button>
+
+                    </a>
 
                 </div>
 
             </div>
+
         `;
-    }
-
-
-    /* ==========================================
-       MOBILE MENU
-       ========================================== */
-
-    const mobileMenu =
-        document.getElementById("mobileMenu");
-
-    const mainLinks =
-        document.getElementById("mainLinks");
-
-
-    if (mobileMenu && mainLinks) {
-
-        mobileMenu.addEventListener("click", () => {
-
-            const isOpen =
-                mainLinks.classList.toggle("open");
-
-            mobileMenu.setAttribute(
-                "aria-expanded",
-                isOpen
-            );
-
-            mobileMenu.innerHTML = isOpen
-                ? `<i class="fa-solid fa-xmark"></i>`
-                : `<i class="fa-solid fa-bars"></i>`;
-        });
 
     }
 
 
-    /* ==========================================
-       FOOTER
-       ========================================== */
+    /* =====================================================
+       SHARED FOOTER
+       ===================================================== */
 
     const footer =
         document.querySelector("footer");
@@ -199,82 +326,105 @@ function searchSite(e) {
                         <a
                             class="brand"
                             href="index.html"
+                            aria-label="ElimuPlus Home"
                         >
 
                             <img
-                                src="logo.svg"
+                                src="${ELIMUPLUS_CONFIG.logo}"
                                 alt="ElimuPlus"
-                                class="site-logo footer-logo"
+                                class="footer-logo"
                             >
 
                         </a>
 
 
                         <p>
-                            Education, skills and personal
-                            development in one connected
-                            learning space.
+
+                            ${ELIMUPLUS_CONFIG.tagline}
+
                         </p>
 
 
                         <!-- SOCIAL MEDIA -->
 
-                        <div
-                            class="social-links"
-                            aria-label="ElimuPlus social media"
-                        >
-
-                            <a
-                                href="#"
-                                aria-label="Facebook"
-                                title="Facebook"
-                            >
-                                <i class="fa-brands fa-facebook-f"></i>
-                            </a>
+                        <div class="social-links">
 
 
                             <a
-                                href="#"
-                                aria-label="Instagram"
-                                title="Instagram"
-                            >
-                                <i class="fa-brands fa-instagram"></i>
-                            </a>
-
-
-                            <a
-                                href="#"
-                                aria-label="TikTok"
+                                href="https://www.tiktok.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="ElimuPlus on TikTok"
                                 title="TikTok"
                             >
+
                                 <i class="fa-brands fa-tiktok"></i>
+
                             </a>
 
 
                             <a
-                                href="#"
-                                aria-label="YouTube"
+                                href="https://www.facebook.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="ElimuPlus on Facebook"
+                                title="Facebook"
+                            >
+
+                                <i class="fa-brands fa-facebook-f"></i>
+
+                            </a>
+
+
+                            <a
+                                href="https://www.instagram.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="ElimuPlus on Instagram"
+                                title="Instagram"
+                            >
+
+                                <i class="fa-brands fa-instagram"></i>
+
+                            </a>
+
+
+                            <a
+                                href="https://www.youtube.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="ElimuPlus on YouTube"
                                 title="YouTube"
                             >
+
                                 <i class="fa-brands fa-youtube"></i>
+
                             </a>
 
 
                             <a
-                                href="#"
-                                aria-label="LinkedIn"
+                                href="https://www.linkedin.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="ElimuPlus on LinkedIn"
                                 title="LinkedIn"
                             >
+
                                 <i class="fa-brands fa-linkedin-in"></i>
+
                             </a>
 
 
                             <a
-                                href="#"
-                                aria-label="X"
+                                href="https://x.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="ElimuPlus on X"
                                 title="X"
                             >
+
                                 <i class="fa-brands fa-x-twitter"></i>
+
                             </a>
 
                         </div>
@@ -288,17 +438,21 @@ function searchSite(e) {
 
                         <h4>LEARN</h4>
 
+
                         <a href="courses.html">
                             Courses
                         </a>
+
 
                         <a href="practice.html">
                             Practice
                         </a>
 
+
                         <a href="examinations.html">
                             Examinations
                         </a>
+
 
                         <a href="ai-assistant.html">
                             ElimuPlus AI
@@ -313,17 +467,21 @@ function searchSite(e) {
 
                         <h4>CONNECT</h4>
 
+
                         <a href="teachers.html">
                             Find a Teacher
                         </a>
+
 
                         <a href="contact.html">
                             Contact Us
                         </a>
 
+
                         <a href="news.html">
                             News & Study Tips
                         </a>
+
 
                         <a href="short-courses.html">
                             Short Courses
@@ -338,42 +496,59 @@ function searchSite(e) {
 
                         <h4>ELIMUPLUS</h4>
 
+
                         <a href="about.html">
                             About Us
                         </a>
+
 
                         <a href="pricing.html">
                             Membership
                         </a>
 
-                        <a href="books.html">
-                            Books
-                        </a>
 
                         <a href="about.html#partner">
                             Partner With Us
                         </a>
 
+
+                        <a href="register.html">
+                            Join ElimuPlus
+                        </a>
+
                     </div>
+
 
                 </div>
 
 
-                <div class="copyright">
+                <!-- FOOTER BOTTOM -->
 
-                    <p>
+                <div class="footer-bottom">
+
+
+                    <div class="copyright">
+
                         © 2026 ElimuPlus.
-                        Learning for every next step.
-                    </p>
+                        All rights reserved.
 
-                    <div class="footer-legal">
+                    </div>
+
+
+                    <div class="footer-bottom-links">
 
                         <a href="#">
                             Privacy Policy
                         </a>
 
+
                         <a href="#">
-                            Terms
+                            Terms of Use
+                        </a>
+
+
+                        <a href="contact.html">
+                            Support
                         </a>
 
                     </div>
@@ -381,46 +556,217 @@ function searchSite(e) {
                 </div>
 
             </div>
+
         `;
+
     }
 
 
-    /* ==========================================
+    /* =====================================================
+       MOBILE NAVIGATION
+       ===================================================== */
+
+    const menuButton =
+        document.querySelector(
+            ".mobile-menu-toggle"
+        );
+
+
+    const linksContainer =
+        document.querySelector(
+            ".nav .links"
+        );
+
+
+    if (menuButton && linksContainer) {
+
+        menuButton.addEventListener(
+            "click",
+            function () {
+
+                const isOpen =
+                    linksContainer.classList.toggle(
+                        "mobile-open"
+                    );
+
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    isOpen ? "true" : "false"
+                );
+
+
+                menuButton.innerHTML = isOpen
+
+                    ? '<i class="fa-solid fa-xmark"></i>'
+
+                    : '<i class="fa-solid fa-bars"></i>';
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
        FLOATING WHATSAPP BUTTON
-       ========================================== */
+       ===================================================== */
 
-    const whatsappNumber =
-        "254742713736";
-
-    const whatsappMessage =
-        "Hello ElimuPlus, I would like to know more about your learning platform.";
+    createWhatsAppButton();
 
 
-    const whatsapp =
+})();
+
+
+/* =========================================================
+   WHATSAPP BUTTON
+   ========================================================= */
+
+function createWhatsAppButton() {
+
+    /*
+        Don't create duplicate buttons.
+    */
+
+    if (
+        document.querySelector(
+            ".elimuplus-whatsapp"
+        )
+    ) {
+        return;
+    }
+
+
+    const button =
         document.createElement("a");
 
 
-    whatsapp.href =
-        `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+    /*
+        If the number has not been configured,
+        still create the button but point to WhatsApp.
+    */
 
-    whatsapp.target = "_blank";
+    let whatsappURL =
+        "https://wa.me/";
 
-    whatsapp.rel = "noopener noreferrer";
 
-    whatsapp.className =
-        "whatsapp-float";
+    if (
+        ELIMUPLUS_CONFIG.whatsappNumber
+        &&
+        ELIMUPLUS_CONFIG.whatsappNumber
+        !== "YOUR_WHATSAPP_NUMBER"
+    ) {
 
-    whatsapp.setAttribute(
+        whatsappURL +=
+            ELIMUPLUS_CONFIG.whatsappNumber
+            +
+            "?text="
+            +
+            encodeURIComponent(
+                ELIMUPLUS_CONFIG.whatsappMessage
+            );
+
+    } else {
+
+        /*
+            Temporary fallback.
+            Replace the number above before launch.
+        */
+
+        whatsappURL =
+            "https://wa.me/";
+
+    }
+
+
+    button.href = whatsappURL;
+
+    button.target = "_blank";
+
+    button.rel =
+        "noopener noreferrer";
+
+
+    button.className =
+        "elimuplus-whatsapp";
+
+
+    button.setAttribute(
         "aria-label",
         "Chat with ElimuPlus on WhatsApp"
     );
 
-    whatsapp.innerHTML = `
+
+    button.setAttribute(
+        "title",
+        "Chat with ElimuPlus"
+    );
+
+
+    button.innerHTML = `
+
         <i class="fa-brands fa-whatsapp"></i>
-        <span>Chat with us</span>
+
+        <span class="whatsapp-tooltip">
+            Chat with ElimuPlus
+        </span>
+
     `;
 
 
-    document.body.appendChild(whatsapp);
+    document.body.appendChild(button);
 
-})();
+}
+
+
+/* =========================================================
+   SEARCH FORM SUPPORT
+   ========================================================= */
+
+document.addEventListener(
+    "submit",
+    function (event) {
+
+        const form =
+            event.target;
+
+
+        if (
+            form.matches(
+                ".site-search"
+            )
+        ) {
+
+            searchSite(event);
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   CURRENT YEAR
+   ========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const yearElements =
+            document.querySelectorAll(
+                ".current-year"
+            );
+
+
+        yearElements.forEach(
+            element => {
+
+                element.textContent =
+                    new Date().getFullYear();
+
+            }
+        );
+
+    }
+);
